@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FireAuthService } from '../prosesData/fire-auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   usersEmail: string;
-  constructor(public authFireService: FireAuthService , private routers: Router , private fireAuthNew: AngularFireAuth) {}
+  dateForToday:any;
+  constructor(private routers: Router , private fireAuthNew: AngularFireAuth) {
+    this.dateForToday = Date.now();
+  }
 
   ngOnInit() {
     this.fireAuthNew.authState.subscribe(res => {
@@ -25,7 +28,7 @@ export class DashboardComponent implements OnInit {
   logoutFormWebsite(){
     let confhere = confirm("Anda yakin ingin Logout");
     if (confhere == true) {
-      this.authFireService.logoutThis();
+      this.fireAuthNew.auth.signOut();
       this.routers.navigate(['/']);
     }else{
       return false;

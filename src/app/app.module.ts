@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { navRoute } from './router';
-import { FireAuthService } from './prosesData/fire-auth.service';
 
 let firebaseConfigHere = {
   apiKey: "AIzaSyABaNXO2lyzikOP6PCgpoaWrVKk_C8T7BM",
@@ -36,9 +35,8 @@ let firebaseConfigHere = {
     AngularFireDatabaseModule,AngularFireAuthModule,
     ReactiveFormsModule, FormsModule, ToastrModule.forRoot(),
     BrowserAnimationsModule
-
   ],
-  providers: [FireAuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

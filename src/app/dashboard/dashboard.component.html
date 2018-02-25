@@ -12,7 +12,7 @@
       </div>
 
       <div class="navbar-right dateright">
-        <h4>Minggu, ?? Februari 2018
+        <h4>{{dateForToday | date:'fullDate'}}
           <font class="hidelogout" style="cursor:pointer" (click)="logoutFormWebsite()">|
             <i class="fa fa-sign-out fa-lg"></i> Logout</font>
         </h4>
@@ -33,7 +33,7 @@
       <div class="jarak_sideheader">
         <img src="assets/img/man.png" class="img-responsive" style="margin:auto;">
         <h4>Guest</h4>
-        <h5>{{ authFireService.selectedUserEmail.email }}</h5>
+        <h5>{{ usersEmail }}</h5>
       </div>
     </div>
 
@@ -65,7 +65,6 @@
     <a class="closebtn" onclick="closeNav()">&times;</a>
 
   </div>
-
 
   <!--SIDE NAV >768PX-->
   <nav class="navbar-default navbar-side">
