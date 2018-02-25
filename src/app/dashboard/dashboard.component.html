@@ -13,7 +13,7 @@
 
       <div class="navbar-right dateright">
         <h4>Minggu, ?? Februari 2018
-          <font class="hidelogout">|
+          <font class="hidelogout" style="cursor:pointer" (click)="logoutFormWebsite()">|
             <i class="fa fa-sign-out fa-lg"></i> Logout</font>
         </h4>
       </div>
@@ -33,21 +33,7 @@
       <div class="jarak_sideheader">
         <img src="assets/img/man.png" class="img-responsive" style="margin:auto;">
         <h4>Guest</h4>
-        <h5>Guest@gmail.com</h5>
-
-        <div class="dropdown">
-          <span class="caret dropdown-toggle" data-toggle="dropdown"></span>
-
-          <ul class="dropdown-menu" style="margin-left: 30px;">
-            <li>
-              <a href="#">isi</a>
-            </li>
-            <li>
-              <a href="#">isi</a>
-            </li>
-          </ul>
-        </div>
-
+        <h5>{{ authFireService.selectedUserEmail.email }}</h5>
       </div>
     </div>
 
@@ -94,19 +80,7 @@
     <div class="user_view">
       <img src="assets/img/man.png" class="img-responsive">
       <h4>Guest</h4>
-      <p>Guest@gmail.com</p>
-      <div class="dropdown">
-        <span class="caret dropdown-toggle" data-toggle="dropdown"></span>
-
-        <ul class="dropdown-menu" style="margin-left: 30px;">
-          <li>
-            <a href="#">isi</a>
-          </li>
-          <li>
-            <a href="#">isi</a>
-          </li>
-        </ul>
-      </div>
+      <p>{{ usersEmail }}</p>
     </div>
 
 

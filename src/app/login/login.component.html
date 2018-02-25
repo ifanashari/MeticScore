@@ -1,3 +1,12 @@
+
+<div class="loading" *ngIf="loading">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-lg-offset-4 text-center">
+      <img src="assets/img/Rolling-1s-108px.gif" alt="" style="margin-top:32vh">
+    </div>
+  </div>
+</div>
+
 <div class="container-fluid">
 
   <div class="container">
@@ -12,13 +21,14 @@
         <span class="hint1">One Account. Admin Only</span>
         <span class="seek">Sign in to continue</span>
       </h3>
-      <form method="" action="">
+      <form #formsLogin="ngForm" (submit)="loginNowWithEmail(formsLogin)">
         <div class="form-group">
           <div class="input-group">
             <i class="input-group-addon icon">
               <i class="fa fa-user fa-lg"></i>
             </i>
-            <input type="text" placeholder="Masukkan Email" class="form-control input">
+            <input type="text" placeholder="Masukkan Email" class="form-control input" name="email"
+            #email="ngModel" [(ngModel)]="selectedUserEmail.email">
           </div>
         </div>
 
@@ -27,11 +37,12 @@
             <i class="input-group-addon icon">
               <i class="fa fa-lock fa-lg"></i>
             </i>
-            <input type="password" placeholder="Masukkan Password" class="form-control input">
+            <input type="password" placeholder="Masukkan Password" class="form-control input" name="password"
+            #password="ngModel" [(ngModel)]="selectedUserEmail.password">
           </div>
         </div>
 
-        <button class="btn btn-danger btn-block btn-lg button">Masuk</button>
+        <button type="submit" class="btn btn-danger btn-block btn-lg button" [disabled]="!formsLogin.value.email || !formsLogin.value.password">Masuk</button>
       </form>
 
       <div class="footer">
