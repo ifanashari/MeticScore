@@ -6,6 +6,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from '@firebase/util';
 import { UserAuthEmail } from '../prosesData/data.model';
 import * as firebase from 'firebase/app';
+import { AuthService } from '../prosesData/auth.service';
 
 
 
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   selectedUserEmail: UserAuthEmail = new UserAuthEmail();
   loading:boolean;
 
-  constructor(private firebaseAuth: AngularFireAuth , private toast: ToastrService , private routers: Router) { 
+  constructor(private firebaseAuth: AngularFireAuth , private toast: ToastrService , 
+    private routers: Router , private authSer: AuthService) { 
     this.loading = false;  
   }
 
@@ -42,9 +44,12 @@ export class LoginComponent implements OnInit {
     .auth.signInWithEmailAndPassword(loginUser.value.email , loginUser.value.password)
     .then(value => {
       this.hideLoadingProgress();
+      sessionStorage.setItem('status' , 'logged');
+      this.authSer.openGuards();
       this.routers.navigate(['/dashboard']);
     })
     .catch(err => {
+      this.authSer.closeGuards();
       this.errForLogin();
     })
   }
@@ -58,7 +63,7 @@ export class LoginComponent implements OnInit {
   errForLogin(){
     this.hideLoadingProgress();
     this.resetFormLogin();
-    this.toast.error('Your email and password missmatch' , 'Oopps!!');
+    this.toast.error('Your email and password missmatch  Contact Angger' , 'Oopps!!');
   }
   resetFormLogin(loginUser?: NgForm){
     if (loginUser != null) {

@@ -10,6 +10,7 @@ import { DatePipe } from '@angular/common';
 })
 export class DashboardComponent implements OnInit {
   usersEmail: string;
+  usersID:string;
   dateForToday:any;
   constructor(private routers: Router , private fireAuthNew: AngularFireAuth) {
     this.dateForToday = Date.now();
@@ -19,6 +20,7 @@ export class DashboardComponent implements OnInit {
     this.fireAuthNew.authState.subscribe(res => {
       if (res) {
         this.usersEmail = res.email; 
+        this.usersID = res.uid;
       } else {
         this.usersEmail = "Anonimus";
       }
