@@ -16,6 +16,9 @@ import { LoginComponent } from './login/login.component';
 import { navRoute } from './router';
 import { AuthService } from './prosesData/auth.service';
 import { Authguard } from './prosesData/authguard';
+import { ScoreComponent } from './score/score.component';
+import { StationComponent } from './station/station.component';
+import { StatisticComponent } from './statistic/statistic.component';
 
 let firebaseConfigHere = {
   apiKey: "AIzaSyABaNXO2lyzikOP6PCgpoaWrVKk_C8T7BM",
@@ -30,7 +33,10 @@ let firebaseConfigHere = {
   declarations: [
     AppComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    ScoreComponent,
+    StationComponent,
+    StatisticComponent
   ],
   imports: [
     BrowserModule,
