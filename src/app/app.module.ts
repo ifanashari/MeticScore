@@ -19,6 +19,9 @@ import { Authguard } from './prosesData/authguard';
 import { ScoreComponent } from './score/score.component';
 import { StationComponent } from './station/station.component';
 import { StatisticComponent } from './statistic/statistic.component';
+import { TambahkelComponent } from './tambahkel/tambahkel.component';
+import { ListKelompokComponent } from './tambahkel/list-kelompok/list-kelompok.component';
+import { DataService } from './prosesData/data.service';
 
 let firebaseConfigHere = {
   apiKey: "AIzaSyABaNXO2lyzikOP6PCgpoaWrVKk_C8T7BM",
@@ -36,7 +39,9 @@ let firebaseConfigHere = {
     LoginComponent,
     ScoreComponent,
     StationComponent,
-    StatisticComponent
+    StatisticComponent,
+    TambahkelComponent,
+    ListKelompokComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ let firebaseConfigHere = {
     ReactiveFormsModule, FormsModule, ToastrModule.forRoot(),
     BrowserAnimationsModule, AngularFirestoreModule
   ],
-  providers: [AuthService , Authguard],
+  providers: [AuthService , Authguard , DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

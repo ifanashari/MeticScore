@@ -9,5 +9,5 @@ export class KelompokMetic{
     ketua: string;
     skor:number;
     deskrip: string;
-    statusPos: boolean;
+    statusPos: any;
 }

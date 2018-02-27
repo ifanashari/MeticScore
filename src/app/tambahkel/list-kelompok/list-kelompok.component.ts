@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { KelompokMetic } from '../prosesData/data.model';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { DataService } from '../prosesData/data.service';
-import { NgForm } from '@angular/forms';
+import { DataService } from '../../prosesData/data.service';
+import { KelompokMetic } from '../../prosesData/data.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-score',
-  templateUrl: './score.component.html',
-  styleUrls: ['./score.component.css']
+  selector: 'app-list-kelompok',
+  templateUrl: './list-kelompok.component.html',
+  styleUrls: ['./list-kelompok.component.scss']
 })
-export class ScoreComponent implements OnInit {
+export class ListKelompokComponent implements OnInit {
   kelompokList: KelompokMetic[];
-  
-  constructor(public fireService: DataService , private toast: ToastrService) { }
+  constructor(private fireService: DataService , private toast: ToastrService) { }
 
   ngOnInit() {
     var keldat = this.fireService.getDataKelompok();
@@ -27,9 +24,11 @@ export class ScoreComponent implements OnInit {
     });
   }
 
-  updatedSkor(kelForm: NgForm){
-    this.updatedSkor(kelForm.value);  
-    this.toast.success('Data Skor telah terkirim' , 'Selamat');
+  onDelete(key: string) {
+    if (confirm('Are you sure to delete this record ?') == true) {
+      this.fireService.deletedDataKelompok(key);
+      this.toast.warning('Deleted Success' , 'Attention')
+    }
   }
 
   onEdit(klmp: KelompokMetic) {

@@ -6,19 +6,49 @@
       <hr style="border: 0.5px solid silver;">
 
       <div class="row">
-
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <div class="panel panel-default panel_input">
-            <div class="panel-body">
-              <form method="" action="">
+            <h6 class="text-center">Daftar kelompok</h6>
+            <br/>
+            <table class="table table-sm table-hover">
+              <tr>
+                <th>Nama kelompok</th>
+                <th>Ketua kelompok</th>
+                <th>Action</th>
+              </tr>
+              <tr *ngFor="let kelompok of kelompokList">
+                <td>{{kelompok.namaKel}}</td>
+                <td>{{kelompok.ketua}}</td>
+                <td>
+                  <a class="btn" (click)="onEdit(kelompok)">
+                    <i class="fa fa-pencil-square-o"></i> Take Score
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <form #kelForm="ngForm" (submit)="updatedSkor(kelForm)">
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="fireService.selectedKelompok.$key" class="form-control">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="panel panel-default panel_input">
+              <div class="panel-body">
                 <div class="form-group">
                   <label>Kelompok</label>
-                  <select name="" class="form-control">
-                    <option value="">Kelompok A</option>
-                    <option value="">Kelompok B</option>
-                    <option value="">Kelompok C</option>
-                    <option value="">Kelompok D</option>
-                  </select>
+                  <div class="form-group">
+                      <label for="">Nama Kelompok</label>
+                      <input type="text" name="namaKel" #namaKel="ngModel" [(ngModel)]="fireService.selectedKelompok.namaKel" class="form-control" placeholder="Red Hat">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Nama Ketua Kelompok</label>
+                      <input type="text" name="ketua" #ketua="ngModel" [(ngModel)]="fireService.selectedKelompok.ketua" class="form-control" placeholder="Ifan Ashari">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Deskripsi</label>
+                      <textarea name="deskrip" #deskrip="ngModel" [(ngModel)]="fireService.selectedKelompok.deskrip" class="form-control" rows="5" required="required"
+                      placeholder="kami berani maju"></textarea>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -54,25 +84,22 @@
 
                 <div class="form-group">
                   <label>Bonus (max 5*)</label>
-                  <input type="text" name="" class="form-control boncon">
+                  <input type="number" name="skor" #skor="ngModel" [(ngModel)]="fireService.selectedKelompok.skor" class="form-control boncon">
                 </div>
+                <button type="submit" class="btn btn-default">button</button>
+
 
                 <div class="form-group note">
                   <h4 style="text-align: left;">*hanya kakak spesial yang bisa memberi bonus</h4>
                 </div>
 
-              </form>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        </form>
 
-          <div class="form-group">
-            <textarea class="incomment" placeholder="Comment"></textarea>
-            <button class="btn btn-success btn-lg btnsubdata">Kirim Data</button>
-          </div>
-        </div>
+
 
 
 
