@@ -22,6 +22,7 @@
             <label for="">Nama Ketua Kelompok</label>
             <input type="text" name="ketua" #ketua="ngModel" [(ngModel)]="fireService.selectedKelompok.ketua" class="form-control" placeholder="Ifan Ashari">
           </div>
+            <input type="hidden" name="skor" #skor="ngModel" [(ngModel)]="fireService.selectedKelompok.skor" class="form-control" [value]="fireService.selectedKelompok.skor">
           <div class="form-group">
             <label for="">Deskripsi</label>
             <textarea name="deskrip" #deskrip="ngModel" [(ngModel)]="fireService.selectedKelompok.deskrip" class="form-control" rows="5" required="required"

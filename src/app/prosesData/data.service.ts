@@ -40,7 +40,7 @@ export class DataService {
     this.kelompikList.update(kelompok.$key , {
       namaKel: kelompok.namaKel,
       ketua: kelompok.ketua,
-      skor: kelompok.skor,
+      skor: this.selectedKelompok.skor,
       deskrip: kelompok.deskrip,
       statusPos: this.poshere
     })

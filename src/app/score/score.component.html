@@ -7,53 +7,115 @@
 
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <div class="panel panel-default panel_input">
-            <h6 class="text-center">Daftar kelompok</h6>
-            <br/>
-            <table class="table table-sm table-hover">
-              <tr>
-                <th>Nama kelompok</th>
-                <th>Ketua kelompok</th>
-                <th>Action</th>
-              </tr>
-              <tr *ngFor="let kelompok of kelompokList">
-                <td>{{kelompok.namaKel}}</td>
-                <td>{{kelompok.ketua}}</td>
-                <td>
-                  <a class="btn" (click)="onEdit(kelompok)">
-                    <i class="fa fa-pencil-square-o"></i> Take Score
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </div>
+          <h6 class="text-center">Daftar kelompok</h6>
+          <br/>
+          <table class="table table-sm table-hover">
+            <tr>
+              <th>Nama kelompok</th>
+              <th>Ketua kelompok</th>
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let kelompok of kelompokList">
+              <td>{{kelompok.namaKel}}</td>
+              <td>{{kelompok.ketua}}</td>
+              <td>
+                <a class="btn" (click)="onEdit(kelompok)">
+                  <i class="fa fa-pencil-square-o"></i> Add Score
+                </a>
+            </tr>
+          </table>
         </div>
 
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <form #kelForms="ngForm" (submit)="updatedSkor(kelForms)">
+            <div class="panel panel-default panel_input">
+              <div class="panel-body">
+                  <div class="form-group">
+                      <h3>Nama Kelompok : {{fireService.selectedKelompok.namaKel}}</h3>
+                      <h3>Nama Ketua : {{fireService.selectedKelompok.ketua}}</h3>
+                      <h3>Nama Score : {{fireService.selectedKelompok.skor}}</h3>
+                    </div>
+                <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="fireService.selectedKelompok.$key" class="form-control">
+                <input type="hidden" name="namaKel" #namaKel="ngModel" [(ngModel)]="fireService.selectedKelompok.namaKel" class="form-control"
+                  [value]="fireService.selectedKelompok.namaKel">
+                <input type="hidden" name="ketua" #ketua="ngModel" [(ngModel)]="fireService.selectedKelompok.ketua" class="form-control"
+                  [value]="fireService.selectedKelompok.ketua">
+
+                <input type="hidden" name="deskrip" #deskrip="ngModel" [(ngModel)]="fireService.selectedKelompok.deskrip" class="form-control"
+                  [value]="fireService.selectedKelompok.deskrip">
+
+                <div class="form-group">
+                  <label>Pos Penilaian</label>
+                  <select class="form-control">
+                    <option value="">Pos 1</option>
+                    <option value="">Pos 2</option>
+                    <option value="">Pos 3</option>
+                    <option value="">Pos 4</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Penilaian</label>
+                  <div class="row cirpla">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                      <div id="circle"></div>
+                      <h4 style="color: black;">Perfect</h4>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                      <div id="circle2"></div>
+                      <h4 style="color: black;">Good</h4>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                      <div id="circle3"></div>
+                      <h4 style="color: black;">Average</h4>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Bonus (max 5*)</label>
+                  <select name="skor" #skor="ngModel" [(ngModel)]="fireService.selectedKelompok.skor" class="form-control">
+                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 5)" > Low </option>
+                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 10)" > Medium  </option>
+                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 15)" > High </option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-default">button</button>
+
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!--
         <form #kelForm="ngForm" (submit)="updatedSkor(kelForm)">
-            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="fireService.selectedKelompok.$key" class="form-control">
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="fireService.selectedKelompok.$key" 
+            [value]="fireService.selectedKelompok.$key" class="form-control">
+
+            <input type="hidden" name="namaKel" #namaKel="ngModel" [(ngModel)]="fireService.selectedKelompok.namaKel" 
+            [value]="fireService.selectedKelompok.namaKel" class="form-control">
+
+            <input type="hidden" name="ketua" #ketua="ngModel" [(ngModel)]="fireService.selectedKelompok.ketua" 
+            [value]="fireService.selectedKelompok.ketua" class="form-control">
+
+            <input type="hidden" name="deskrip" #deskrip="ngModel" [(ngModel)]="fireService.selectedKelompok.deskrip" 
+            [value]="fireService.selectedKelompok.deskrip" class="form-control">
+
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="panel panel-default panel_input">
               <div class="panel-body">
                 <div class="form-group">
                   <label>Kelompok</label>
-                  <div class="form-group">
-                      <label for="">Nama Kelompok</label>
-                      <input type="text" name="namaKel" #namaKel="ngModel" [(ngModel)]="fireService.selectedKelompok.namaKel" class="form-control" placeholder="Red Hat">
-                    </div>
-                    <div class="form-group">
-                      <label for="">Nama Ketua Kelompok</label>
-                      <input type="text" name="ketua" #ketua="ngModel" [(ngModel)]="fireService.selectedKelompok.ketua" class="form-control" placeholder="Ifan Ashari">
-                    </div>
-                    <div class="form-group">
-                      <label for="">Deskripsi</label>
-                      <textarea name="deskrip" #deskrip="ngModel" [(ngModel)]="fireService.selectedKelompok.deskrip" class="form-control" rows="5" required="required"
-                      placeholder="kami berani maju"></textarea>
-                    </div>
+                  <h3>Nama Kelompok : {{fireService.selectedKelompok.namaKel}}</h3>
+                  <h3>Nama Ketua : {{fireService.selectedKelompok.ketua}}</h3>
                 </div>
 
                 <div class="form-group">
                   <label>Pos Penilaian</label>
-                  <select name="" class="form-control">
+                  <select class="form-control">
                     <option value="">Pos 1</option>
                     <option value="">Pos 2</option>
                     <option value="">Pos 3</option>
@@ -98,6 +160,7 @@
           </div>
 
         </form>
+      -->
 
 
 
