@@ -9,13 +9,7 @@
 
       <div class="row">
         <div class="col-lg-3">
-          <div class="ketbox">
-            <p>Keterangan:</p>
-            <label>Telah terkontribusi</label>
-            <hr style="border:1px solid #5CB85C;">
-            <label>Belum terkontribusi</label>
-            <hr style="border:1px solid #E5272A;">
-          </div>
+
         </div>
 
         <div class="col-lg-3 col-lg-offset-6">
@@ -31,139 +25,17 @@
 
       <!--well-lg PADDING CHANGE IN 24PX->40PX IN bootstrap.css-->
       <div class="wadahpos">
-        <div *ngFor="let kelompok of kelompokList">
+        
           <div class="row">
-            <h4 style="color: black;text-align: left;">Kelompok: {{kelompok.namaKel}}</h4>
+            <h4 style="color: black;text-align: left;">Kelompok List</h4>
             <!-- truehere posgo -->
+            <div *ngFor="let kelompok of kelompokList">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske1}}">
-                <h4>Poske 1</h4>
+              <div class="well well-lg {{kelompok.statusPos.poske1}}" (click)="onEdit(kelompok)">
+                <h4>{{kelompok.namaKel}}</h4>
               </div>
             </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske2}}">
-                <h4>Poske 2</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske3}}">
-                <h4>Poske 3</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske4}}">
-                <h4>Poske 4</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske5}}">
-                <h4>Poske 5</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske6}}">
-                <h4>Poske 6</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske7}}">
-                <h4>Poske 7</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske8}}">
-                <h4>Poske 8</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske9}}">
-                <h4>Poske 9</h4>
-              </div>
-            </div>
-
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske10}}">
-                <h4>Poske 10</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske11}}">
-                <h4>Poske 11</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske12}}">
-                <h4>Poske 12</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske13}}">
-                <h4>Poske 13</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske14}}">
-                <h4>Poske 14</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske15}}">
-                <h4>Poske 15</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske16}}">
-                <h4>Poske 16</h4>
-              </div>
-            </div>
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske17}}">
-                <h4>Poske 17</h4>
-              </div>
-            </div>
-
-
-            <!-- truehere posgo -->
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <div class="well well-lg {{kelompok.statusPos.poske18}}">
-                <h4>Poske 18</h4>
-              </div>
-            </div>
-
           </div>
-        </div>
 
 
       </div>

@@ -39,6 +39,10 @@ export class ScoreComponent implements OnInit {
     return hasil;
   }
 
+  inputGuards(){
+    
+  }
+
   updatedSkor(kelForms: NgForm) {
     if (kelForms.value.$key == null) {
       this.resetForm();

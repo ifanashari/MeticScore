@@ -13,8 +13,8 @@ export const navRoute:Routes = [
     {
         path: 'dashboard', component:DashboardComponent, 
         children: [
-            {path: '', component:ScoreComponent},
-            {path: 'station', component:StationComponent},
+            {path: '', component:StationComponent},
+            {path: 'score', component:ScoreComponent},
             {path: 'statistic', component:StatisticComponent},
             {path: 'addKelompok', component:TambahkelComponent}
         ]

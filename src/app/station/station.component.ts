@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../prosesData/data.service';
 import { KelompokMetic } from '../prosesData/data.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-station',
@@ -12,7 +13,7 @@ export class StationComponent implements OnInit {
   test:string;
   
 
-  constructor(private fireService: DataService) {
+  constructor(private fireService: DataService , private routers: Router) {
     this.test = 'emstat';
     
   }
@@ -27,6 +28,11 @@ export class StationComponent implements OnInit {
         this.kelompokList.push(newitem as KelompokMetic);
       });
     });
+  }
+
+  onEdit(klmp: KelompokMetic) {
+    this.routers.navigate(['/dashboard/score']);
+    this.fireService.selectedKelompok = Object.assign({}, klmp);
   }
 
 
