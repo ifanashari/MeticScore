@@ -27,8 +27,13 @@ export class AbsensiComponent implements OnInit {
   }
 
   updateAbsensiPeserta(key , name){
-    this.fireService.updateStatusPeserta(key , name);
-    this.toastr.success('Nama telah terabsen' , 'Selamat');
+    let confirm = window.confirm('Yakin ini benar? ');
+    if (confirm == true) {
+      this.fireService.updateStatusPeserta(key , name);
+      this.toastr.success('Nama telah terabsen' , 'Selamat');
+    }else{
+      return false;
+    }
   }
 
 }
