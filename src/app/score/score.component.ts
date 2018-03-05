@@ -4,6 +4,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { DataService } from '../prosesData/data.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-score',
@@ -14,7 +15,7 @@ export class ScoreComponent implements OnInit {
   kelompokList: KelompokMetic[];
   inputGuard:boolean;
 
-  constructor(public fireService: DataService, private toast: ToastrService) { 
+  constructor(public fireService: DataService, private toast: ToastrService , private routers: Router) { 
     this.inputGuard = false;
   }
 
@@ -51,23 +52,12 @@ export class ScoreComponent implements OnInit {
       this.fireService.updatedKelompok(kelForms.value);
       this.resetForm();
       this.toast.success('Updated Data Great' , 'Done');
+      this.routers.navigate(['/dashboard']);
     }
   }
 
   onEdit(klmp: KelompokMetic) {
     this.fireService.selectedKelompok = Object.assign({}, klmp);
-  }
-
-  insertNewKelompok(kelForms: NgForm){
-    if (kelForms.value.$key == null) {
-      this.fireService.insertDataKelompok(kelForms.value);
-      this.resetForm();
-      this.toast.success('Tambah data kelompok berhasil' , 'Good Network');
-    }else{
-      this.fireService.updatedKelompok(kelForms.value);
-      this.resetForm();
-      this.toast.success('Updated Data Great' , 'Done');
-    }
   }
 
   resetForm(kelForms?: NgForm){
