@@ -6,16 +6,15 @@
       <hr style="border: 0.5px solid silver;">
 
       <div class="row">
-
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <form #kelForms="ngForm" (submit)="updatedSkor(kelForms)">
             <div class="panel panel-default panel_input">
               <div class="panel-body">
-                  <div class="form-group">
-                      <h3>Nama Kelompok : {{fireService.selectedKelompok.namaKel}}</h3>
-                      <h3>Nama Ketua : {{fireService.selectedKelompok.ketua}}</h3>
-                      <h3>Nama Score : {{fireService.selectedKelompok.skor}}</h3>
-                    </div>
+                <div class="form-group">
+                  <h3><small>Nama Kelompok</small> {{fireService.selectedKelompok.namaKel}}</h3>
+                  <h3><small>Nama Ketua</small> {{fireService.selectedKelompok.ketua}}</h3>
+                  <h3><small>Score</small> {{fireService.selectedKelompok.skor}}</h3>
+                </div>
                 <hr>
                 <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="fireService.selectedKelompok.$key" class="form-control">
                 <input type="hidden" name="namaKel" #namaKel="ngModel" [(ngModel)]="fireService.selectedKelompok.namaKel" class="form-control"
@@ -51,33 +50,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Penilaian</label>
-                    <div class="row cirpla">
-                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <div id="circle"></div>
-                        <h4 style="color: black;">Perfect</h4>
-                      </div>
-  
-                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <div id="circle2"></div>
-                        <h4 style="color: black;">Good</h4>
-                      </div>
-  
-                      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <div id="circle3"></div>
-                        <h4 style="color: black;">Average</h4>
-                      </div>
-  
-                    </div>
-                  </div>
-
-
-                <div class="form-group">
                   <label>Bonus (max 5*)</label>
                   <select name="skor" #skor="ngModel" [(ngModel)]="fireService.selectedKelompok.skor" class="form-control">
-                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 5)" > Low </option>
-                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 10)" > Medium  </option>
-                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 15)" > High </option>
+                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 5)"> Low </option>
+                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 10)"> Medium </option>
+                    <option [value]="plusSkorHere(fireService.selectedKelompok.skor , 15)"> High </option>
                   </select>
                 </div>
                 <button type="submit" class="btn btn-default">Kirim NIlai</button>

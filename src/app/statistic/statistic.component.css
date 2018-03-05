@@ -1,0 +1,2 @@
+#team{border-left: thick solid red;padding: 5px 20px;}
+#team:hover{background: rgba(180, 180, 180, 0.3);cursor: pointer}

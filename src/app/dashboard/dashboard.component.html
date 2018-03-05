@@ -3,12 +3,13 @@
   <nav class="navbar navbar-inverse navbar-upper navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a href="#" class="navbar-brand">
-          <img src="assets/img/logometic.png"> INPUT DATA</a>
+        <a class="navbar-brand">
+          <img src="assets/img/logometic.png"> MeticScore
+        </a>
       </div>
       <!--BUTTON <768PX == SHOW-->
       <div class="navbar-left butpulrespon">
-        <button class="btn btn-default butpul2respon" onclick="openNav()">&#9776;</button>
+        <button class="btn btn-default butpul2respon" (click)="openNav()">&#9776;</button>
       </div>
 
       <div class="navbar-right dateright">
@@ -25,7 +26,7 @@
     <div class="sidenav_title">
       <a href="#">
         <img src="assets/img/logometic.png" class="img-responsive">
-        <h6>INPUT DATA</h6>
+        <h6>MeticScore</h6>
       </a>
     </div>
 
@@ -39,20 +40,21 @@
 
     <ul class="nav">
       <li>
-        <a href="#a" data-toggle="tab">
+        <a data-toggle="tab" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
           <i class="fa fa-home fa-lg"></i> FORM INPUT NILAI</a>
       </li>
       <li>
-        <a href="#b" data-toggle="tab">
-          <i class="fa fa-table fa-lg"></i> TABEL NILAI</a>
-      </li>
-      <li>
-        <a href="#c" data-toggle="tab">
+        <a data-toggle="tab" [routerLink]="['/dashboard/statistic']" routerLinkActive="router-link-active">
           <i class="fa fa-clipboard fa-lg"></i> STATISTIK</a>
       </li>
       <li>
+        <a data-toggle="tab" [routerLink]="['/dashboard/addKelompok']" routerLinkActive="router-link-active">
+          <i class="fa fa-question-circle fa-lg"></i> Tambah Kelompok</a>
+      </li>
+      <li>
         <a href="#d" data-toggle="tab">
-          <i class="fa fa-question-circle fa-lg"></i> BANTUAN </a>
+          <i class="fa fa-question-circle fa-lg"></i> BANTUAN
+        </a>
       </li>
     </ul>
     <hr>
@@ -62,7 +64,7 @@
         <a href="http://www.smktelkom-mlg.sch.id/" style="color:darkred;">Smk Telkom Malang</a> 2018</h5>
     </div>
 
-    <a class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="closebtn" (click)="closeNav()">&times;</a>
 
   </div>
 
@@ -72,7 +74,7 @@
     <div class="titlenavside">
       <a href="#">
         <img src="assets/img/logometic.png" class="img-responsive">
-        <h6>INPUT DATA</h6>
+        <h6>MeticScore</h6>
       </a>
     </div>
 
@@ -85,12 +87,14 @@
 
     <ul class="nav">
       <li>
-        <a data-toggle="tab" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >
-          <i class="fa fa-home fa-lg"></i> FORM INPUT NILAI</a>
+        <a data-toggle="tab" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
+          <i class="fa fa-home fa-lg"></i> FORM INPUT NILAI
+        </a>
       </li>
       <li>
-        <a data-toggle="tab" [routerLink]="['/dashboard/statistic']" routerLinkActive="router-link-active" >
-          <i class="fa fa-clipboard fa-lg"></i> STATISTIK</a>
+        <a data-toggle="tab" [routerLink]="['/dashboard/statistic']" routerLinkActive="router-link-active">
+          <i class="fa fa-clipboard fa-lg"></i> STATISTIK
+        </a>
       </li>
       <li>
         <a data-toggle="tab" [routerLink]="['/dashboard/Absensi']" routerLinkActive="router-link-active" >

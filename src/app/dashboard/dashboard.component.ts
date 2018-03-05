@@ -36,5 +36,11 @@ export class DashboardComponent implements OnInit {
       return false;
     }
   }
+  openNav(){
+    document.getElementById("mySidenav").style.width = "260px";
+  }
+  closeNav(){
+    document.getElementById("mySidenav").style.width = "0";
+  }
 
 }

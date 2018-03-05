@@ -3,40 +3,35 @@
   <div class="page-wrapper">
     <div class="container-fluid">
       <h3>
-        <i class="fa fa-table fa-lg"></i> Status Pos</h3>
+        <i class="fa fa-table fa-lg"></i> Status Kelompok</h3>
       <hr style="border: 0.5px solid silver;">
-      <h3>Status Pos Yang dimasuki Kelompok Saat Ini</h3>
 
-      <div class="row">
-        <div class="col-lg-3">
-
-        </div>
-
-        <div class="col-lg-3 col-lg-offset-6">
-          <div class="ketbox">
-            <p>Data terkontribusi:</p>
-            <label>Telah terkontribusi : 26 / 36</label>
-            <label>Belum terkontribusi : 10 </label>
-          </div>
-        </div>
-
-      </div>
 
 
       <!--well-lg PADDING CHANGE IN 24PX->40PX IN bootstrap.css-->
       <div class="wadahpos">
-        
-          <div class="row">
-            <h4 style="color: black;text-align: left;">Kelompok List</h4>
-            <!-- truehere posgo -->
-            <div *ngFor="let kelompok of kelompokList">
+
+        <div class="row">
+          <h4 style="color: black;text-align: left;">List Kelompok</h4>
+          <!-- truehere posgo -->
+          <!-- <div *ngFor="let kelompok of kelompokList">
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <div class="well well-lg instat" (click)="onEdit(kelompok)">
                 <h4>{{kelompok.namaKel}}</h4>
               </div>
             </div>
+          </div> -->
+
+          <div *ngFor="let kelompok of kelompokList">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" (click)="onEdit(kelompok)">
+              <h3 id="team">
+                <small>Kelompok</small> {{kelompok.namaKel}}
+              </h3>
+              
+            </div>
           </div>
 
+        </div>
       </div>
     </div>
   </div>
