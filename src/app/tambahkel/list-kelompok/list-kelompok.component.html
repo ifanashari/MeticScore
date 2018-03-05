@@ -1,0 +1,18 @@
+<h6 class="text-center">Daftar kelompok</h6><br/>
+<table class="table table-sm table-hover">
+  <tr>
+    <th>Nama kelompok</th> <th>Ketua kelompok</th> <th>Action</th>
+  </tr>
+  <tr *ngFor="let kelompok of kelompokList">
+      <td>{{kelompok.namaKel}}</td>
+      <td>{{kelompok.ketua}}</td>
+      <td>
+        <a class="btn" (click)="onEdit(kelompok)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn" (click)="onDelete(kelompok.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+</table>

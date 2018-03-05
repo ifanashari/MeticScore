@@ -85,16 +85,16 @@
 
     <ul class="nav">
       <li>
-        <a href="#a" data-toggle="tab">
+        <a data-toggle="tab" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >
           <i class="fa fa-home fa-lg"></i> FORM INPUT NILAI</a>
       </li>
-      <li class="active">
-        <a href="#b" data-toggle="tab">
-          <i class="fa fa-table fa-lg"></i> STATUS POS</a>
+      <li>
+        <a data-toggle="tab" [routerLink]="['/dashboard/statistic']" routerLinkActive="router-link-active" >
+          <i class="fa fa-clipboard fa-lg"></i> STATISTIK</a>
       </li>
       <li>
-        <a href="#c" data-toggle="tab">
-          <i class="fa fa-clipboard fa-lg"></i> STATISTIK</a>
+        <a data-toggle="tab" [routerLink]="['/dashboard/addKelompok']" routerLinkActive="router-link-active" >
+          <i class="fa fa-question-circle fa-lg"></i> Tambah Kelompok </a>
       </li>
       <li>
         <a href="#d" data-toggle="tab">
