@@ -11,3 +11,9 @@ export class KelompokMetic{
     deskrip: string;
     statusPos: any;
 }
+
+export class Peserta{
+    $key:string;
+    name: any;
+    status:string;
+}

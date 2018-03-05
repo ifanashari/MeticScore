@@ -1,0 +1,53 @@
+<!--POS INDICATOR-->
+<div class="tab-pane active" id="b">
+  <div class="page-wrapper">
+    <div class="container-fluid">
+      <h3>
+        <i class="fa fa-table fa-lg"></i> Status Pos</h3>
+      <hr style="border: 0.5px solid silver;">
+      <h3>Status Pos Yang dimasuki Kelompok Saat Ini</h3>
+
+      <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-6">
+          <div class="ketbox">
+            <p>Data terkontribusi:</p>
+            <label>Telah terkontribusi : 26 / 36</label>
+            <label>Belum terkontribusi : 10 </label>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!--well-lg PADDING CHANGE IN 24PX->40PX IN bootstrap.css-->
+      <div class="wadahpos">
+        <div class="row">
+          <h4 style="color: black;text-align: left;">Daftar Absensi Peserta</h4>
+            <label for="">Search Here:</label>
+            <input type="text" [(ngModel)]="term" class="form-control">
+            <br>
+          <table class="table table-sm table-hover">
+            <tr>
+              <th>Nama Anggota Peserta PD </th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let peserta of pesertaList | filter:term">
+              <td>{{peserta.Name}}</td>
+              <td>
+                <p style="color:red;" *ngIf="(peserta.Status == 'false')">Not in Place</p>
+                <p style="color:green;" *ngIf="(peserta.Status == 'true')">In Place</p>
+              </td>
+              <td>
+                <button type="button" [disabled]="(peserta.Status == 'true')" class="btn btn-success" (click)="updateAbsensiPeserta(peserta.$key , peserta.Name)">Hadir</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

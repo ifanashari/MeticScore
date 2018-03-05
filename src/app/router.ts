@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StationComponent } from './station/station.component';
 import { TambahkelComponent } from './tambahkel/tambahkel.component';
+import { AbsensiComponent } from './absensi/absensi.component';
 
 export const navRoute:Routes = [
     {path: '', component:LoginComponent},
@@ -16,7 +17,8 @@ export const navRoute:Routes = [
             {path: '', component:StationComponent},
             {path: 'score', component:ScoreComponent},
             {path: 'statistic', component:StatisticComponent},
-            {path: 'addKelompok', component:TambahkelComponent}
+            {path: 'addKelompok', component:TambahkelComponent},
+            {path: 'Absensi', component:AbsensiComponent}
         ]
     }
 ]
