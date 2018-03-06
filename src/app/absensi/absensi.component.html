@@ -36,6 +36,13 @@
               <th>Status</th>
               <th>Action</th>
             </tr>
+            <tr>
+              <td colspan="3">
+                <div class="text-center" *ngIf="(pesertaList == null)" style="margin-top:10vh">
+                  <img src="../../assets/img/Rolling-1s-108px.gif" alt="">
+                </div>
+              </td>
+            </tr>
             <tr *ngFor="let peserta of pesertaList | filter:term">
               <td>{{peserta.Name}}</td>
               <td>
