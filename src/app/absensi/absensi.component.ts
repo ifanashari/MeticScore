@@ -12,7 +12,6 @@ export class AbsensiComponent implements OnInit {
   pesertaList: Peserta[];
   term:string;
   onStatus:boolean;
-  term:string;
   constructor(private fireService: DataService , private toastr: ToastrService) { }
 
   ngOnInit() {
