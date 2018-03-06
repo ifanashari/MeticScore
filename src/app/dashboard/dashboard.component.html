@@ -11,13 +11,6 @@
       <div class="navbar-left butpulrespon">
         <button class="btn btn-default butpul2respon" (click)="openNav()">&#9776;</button>
       </div>
-
-      <div class="navbar-right dateright">
-        <h4>{{dateForToday | date:'fullDate'}}
-          <font class="hidelogout" style="cursor:pointer" (click)="logoutFormWebsite()">|
-            <i class="fa fa-sign-out fa-lg"></i> Logout</font>
-        </h4>
-      </div>
     </div>
   </nav>
 
@@ -52,8 +45,8 @@
           <i class="fa fa-question-circle fa-lg"></i> Tambah Kelompok</a>
       </li>
       <li>
-        <a href="#d" data-toggle="tab">
-          <i class="fa fa-question-circle fa-lg"></i> BANTUAN
+        <a data-toggle="tab" (click)="logoutFormWebsite()">
+          <i class="fa fa-sign-out fa-lg"></i> Logout
         </a>
       </li>
     </ul>
@@ -97,26 +90,34 @@
         </a>
       </li>
       <li>
-        <a data-toggle="tab" [routerLink]="['/dashboard/Absensi']" routerLinkActive="router-link-active" >
+        <a data-toggle="tab" [routerLink]="['/dashboard/Absensi']" routerLinkActive="router-link-active">
           <i class="fa fa-clipboard fa-lg"></i> ABSENSI</a>
       </li>
       <li>
-        <a data-toggle="tab" [routerLink]="['/dashboard/addKelompok']" routerLinkActive="router-link-active" >
+        <a data-toggle="tab" [routerLink]="['/dashboard/addKelompok']" routerLinkActive="router-link-active">
           <i class="fa fa-question-circle fa-lg"></i> Tambah Kelompok </a>
       </li>
       <li>
-        <a href="#d" data-toggle="tab">
-          <i class="fa fa-question-circle fa-lg"></i> BANTUAN </a>
+        <a data-toggle="tab" (click)="logoutFormWebsite()">
+          <i class="fa fa-sign-out fa-lg"></i> Logout</a>
       </li>
     </ul>
     <hr>
     <!--FOOTER-->
     <div class="footer">
-      <h5 style="color: black;">&copy; Metic -
-        <a href="http://www.smktelkom-mlg.sch.id/" style="color:darkred;">Smk Telkom Malang</a> 2018</h5>
+      <h5 style="color: black;">
+        <small>
+          &copy; Metic -
+          <a href="http://www.smktelkom-mlg.sch.id/" style="color:darkred;">Smk Telkom Malang</a> 2018
+        </small>
+        <br> {{dateForToday | date:'fullDate'}}
+      </h5>
     </div>
   </nav>
 </div>
 <div class="tab-content">
+  <!-- <h1>
+    {{dateForToday | date:'fullDate'}}
+  </h1> -->
   <router-outlet></router-outlet>
 </div>

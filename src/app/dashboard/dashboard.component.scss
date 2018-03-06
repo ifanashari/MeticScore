@@ -1,3 +1,15 @@
 .btn{
 	border-radius: 0 !important;
 }
+ul{
+	li{
+		a{
+			&:hover{cursor: pointer;}
+		}
+	}
+}
+#mySidenav{
+	a{
+		&:hover{cursor: pointer;}
+	}
+}
