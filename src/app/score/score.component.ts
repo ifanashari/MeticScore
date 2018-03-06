@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class ScoreComponent implements OnInit {
   kelompokList: KelompokMetic[];
   inputGuard:boolean;
+  statusPos:number;
 
   constructor(public fireService: DataService, private toast: ToastrService , private routers: Router) { 
     this.inputGuard = false;

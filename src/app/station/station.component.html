@@ -19,7 +19,7 @@
           <div *ngFor="let kelompok of kelompokList">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" (click)="onEdit(kelompok)">
               <h3 id="team">
-                <small>Kelompok</small> {{kelompok.namaKel}}
+                <small>Kelompok</small> {{kelompok.namaKel}} <small>Score: </small> {{kelompok.skor}}
               </h3>
               
             </div>
