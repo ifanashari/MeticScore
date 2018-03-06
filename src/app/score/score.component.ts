@@ -44,16 +44,13 @@ export class ScoreComponent implements OnInit {
     
   }
 
-  updatedSkor(kelForms: NgForm) {
-    if (kelForms.value.$key == null) {
-      this.resetForm();
-      this.toast.error('Unknow error hendler' , 'WRONG!!');
-    }else{
-      this.fireService.updatedKelompok(kelForms.value);
-      this.resetForm();
-      this.toast.success('Updated Data Great' , 'Done');
-      this.routers.navigate(['/dashboard']);
-    }
+  updateNewScore(key , score){
+    let newScore = parseInt(score);
+    let hasil = this.fireService.selectedKelompok.skor += newScore;
+    this.fireService.updatedScoreTeam1(key , hasil);
+    this.resetForm();
+    this.toast.success('Updated Data Great' , 'Done');
+    this.routers.navigate(['/dashboard']);
   }
 
   onEdit(klmp: KelompokMetic) {

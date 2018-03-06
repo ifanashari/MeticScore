@@ -49,6 +49,15 @@ export class DataService {
     })
   }
 
+  updatedScoreTeam1(key , score){
+    this.kelompikList.set(key , {
+      namaKel: this.selectedKelompok.namaKel,
+      ketua: this.selectedKelompok.ketua,
+      skor: score,
+      deskrip: this.selectedKelompok.deskrip
+    })
+  }
+
   updateStatusPeserta(key , name){
     this.pesertaList.set(key , {
       Name: name,
