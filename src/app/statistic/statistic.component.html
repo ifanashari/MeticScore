@@ -16,12 +16,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let kelompok of kelompokList | orderBy: key : reverse ; let i = index">
             <td>
-              <h3>Alpha</h3>
+              <h3>{{i + 1}} . {{kelompok.namaKel}}</h3>
             </td>
             <td>
-              <h1 class="text-right">1000</h1>
+              <h1 class="text-right">{{kelompok.skor}}</h1>
             </td>
           </tr>
         </tbody>

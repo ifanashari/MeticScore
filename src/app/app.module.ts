@@ -10,6 +10,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -47,7 +48,7 @@ let firebaseConfigHere = {
     AbsensiComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,OrderModule,
     RouterModule.forRoot(navRoute),AngularFireModule.initializeApp(firebaseConfigHere),
     AngularFireDatabaseModule,AngularFireAuthModule,
     ReactiveFormsModule, FormsModule, ToastrModule.forRoot(),

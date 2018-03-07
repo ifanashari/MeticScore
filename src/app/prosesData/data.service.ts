@@ -6,6 +6,7 @@ import { KelompokMetic, Peserta } from './data.model';
 @Injectable()
 export class DataService {
   kelompikList: AngularFireList<any>;
+  skoreList: AngularFireList<{}>;
   pesertaList: AngularFireList<any>;
   selectedKelompok: KelompokMetic = new KelompokMetic();
   poshere = {};
@@ -24,6 +25,7 @@ export class DataService {
     this.kelompikList = this.realtime.list('kelompok');
     return this.kelompikList;
   }
+
   getDataPeserta(){
     this.pesertaList = this.realtime.list('peserta');
     return this.pesertaList;
