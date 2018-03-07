@@ -1,4 +1,3 @@
-
 <div class="loading" *ngIf="loading">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-lg-offset-4 text-center">
@@ -17,29 +16,20 @@
     </div>
     <div class="wadah text-center">
       <img src="assets/img/user.png">
-      <h3 class="hint">
-        <span class="hint1">One Account. Admin Only</span>
-        <span class="seek">Sign in to continue</span>
-      </h3>
       <form #formsLogin="ngForm" (submit)="loginNowWithEmail(formsLogin)">
-        <div class="form-group">
-          <div class="input-group">
-            <i class="input-group-addon icon">
-              <i class="fa fa-user fa-lg"></i>
-            </i>
-            <input type="text" placeholder="Masukkan Email" class="form-control input" name="email"
-            #email="ngModel" [(ngModel)]="selectedUserEmail.email">
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-user"></i>
           </div>
+          <input type="text" placeholder="Masukkan Email" class="form-control" name="email" #email="ngModel" [(ngModel)]="selectedUserEmail.email">
         </div>
 
-        <div class="form-group">
-          <div class="input-group">
-            <i class="input-group-addon icon">
-              <i class="fa fa-lock fa-lg"></i>
-            </i>
-            <input type="password" placeholder="Masukkan Password" class="form-control input" name="password"
-            #password="ngModel" [(ngModel)]="selectedUserEmail.password">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-lock"></i>
           </div>
+          <input type="password" class="form-control" placeholder="Masukkan Password" name="password" #password="ngModel" [(ngModel)]="selectedUserEmail.password">
         </div>
 
         <button type="submit" class="btn btn-danger btn-block btn-lg button" [disabled]="!formsLogin.value.email || !formsLogin.value.password">Masuk</button>

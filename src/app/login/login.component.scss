@@ -9,11 +9,11 @@ $base: "../../assets/";
     background-size: cover;
     height: 100vh;
     background-attachment: fixed;
-    overflow-y: hidden;
+    overflow-y: auto;
     }
 .wadah{
-    width: 40%;
-    padding: 50px;
+    width: 30%;
+    padding: 20px 10px;
     margin: auto;
     margin-top: -25px;
     background-color: transparent;
@@ -23,11 +23,15 @@ $base: "../../assets/";
     padding-bottom: 50px;
 }
 .input-group{
-    border: 20px;display: flex;background: white;align-items: center;
-    padding: 0 0 0 20px;border-radius: 100px;overflow: hidden;color: gray;
-    .icon{border-radius: 20px;border: 0px solid #283038;background-color: white;}
-    .input{
-        border-radius: 20px;padding: 20pxs;box-shadow: none;border: 0px solid #283038;border-left: none;
+    margin: 5px 0;border: 100px;border-radius: 100px !important;
+    .input-group-addon{
+        border-radius: 100px 0 0 100px !important;border: none;background: white;
+    }
+    .form-control{
+        border-radius: 0 100px 100px 0 !important;border: none !important;
+        outline: none !important;box-shadow: none;
+        &:focus{
+        }
     }
 }
 .button{
@@ -36,18 +40,6 @@ $base: "../../assets/";
 .title img{
     width: 100px;
     margin: auto;
-}
-.title h2{
-    text-align: center;
-    font-size: 3.5em;
-    font-family: calibri;
-    font-weight: 300;
-}
-.title h3{
-    text-align: center;
-    font-family: calibri;
-    font-size: 2.3em;
-    font-weight: 200;
 }
 .footer h5{
     color: black;font-size: 15px;bottom: 0;
@@ -60,28 +52,19 @@ span {
         z-index: 4;
         top: 195px;
 }
-.hint{
-    display: none;
-}
 
 /*MEDIA QUERY*/
 @media screen and (max-width: 768px){
     .wadah{
-        width: 60% !important;
+        width: 80% !important;
     }
 }
 @media screen and (max-width: 425px){
     .wadah{
         width: 100% !important;
     }
-    .title h2,.title h3{
-        display: none;
-    }
-    .hint{
-        display: block;
-    }
     .title img{
-        margin: 0;
+        margin: auto;
         width: 18%;
     }
 }
@@ -92,15 +75,9 @@ span {
     .wadah img{
         width: 35%;
     }
-    .hint1{
-        left: 43px;
-    }
 }
 @media screen and (max-width: 320px){
     .wadah img{
         width: 45%;
-    }
-    .hint{
-        font-size: 20px;
     }
 }
