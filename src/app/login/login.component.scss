@@ -25,10 +25,13 @@ $base: "../../assets/";
 .input-group{
     margin: 5px 0;border: 100px;border-radius: 100px !important;
     .input-group-addon{
-        border-radius: 100px 0 0 100px !important;
+        border-radius: 100px 0 0 100px !important;border: none;background: white;
     }
     .form-control{
-        border-radius: 0 100px 100px 0 !important;
+        border-radius: 0 100px 100px 0 !important;border: none !important;
+        outline: none !important;box-shadow: none;
+        &:focus{
+        }
     }
 }
 .button{
