@@ -25,6 +25,8 @@ import { TambahkelComponent } from './tambahkel/tambahkel.component';
 import { ListKelompokComponent } from './tambahkel/list-kelompok/list-kelompok.component';
 import { DataService } from './prosesData/data.service';
 import { AbsensiComponent } from './absensi/absensi.component';
+import { BonusComponent } from './bonus/bonus.component';
+import { RankingComponent } from './ranking/ranking.component';
 
 let firebaseConfigHere = {
   apiKey: "AIzaSyABaNXO2lyzikOP6PCgpoaWrVKk_C8T7BM",
@@ -45,7 +47,9 @@ let firebaseConfigHere = {
     StatisticComponent,
     TambahkelComponent,
     ListKelompokComponent,
-    AbsensiComponent
+    AbsensiComponent,
+    BonusComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,OrderModule,

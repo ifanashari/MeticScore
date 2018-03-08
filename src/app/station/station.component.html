@@ -17,10 +17,13 @@
             <img src="../../assets/img/Rolling-1s-108px.gif" alt="">
           </div>
           <div *ngFor="let kelompok of kelompokList">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" (click)="onEdit(kelompok)">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
               <h3 id="team">
                 <small>Kelompok</small> {{kelompok.namaKel}} <small>Score: </small> {{kelompok.skor}}
               </h3>
+              
+              <button (click)="onEdit(kelompok)" type="button" class="btn btn-success">Score</button>
+              <button [routerLink]="['/dashboard/bonus']" routerLinkActive="router-link-active" type="button" class="btn btn-info">Bonus</button>
               
             </div>
           </div>
