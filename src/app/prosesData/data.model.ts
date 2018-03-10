@@ -17,3 +17,6 @@ export class Peserta{
     name: any;
     status:string;
 }
+export class ScoreVal {
+    skor:number;
+}

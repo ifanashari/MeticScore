@@ -11,11 +11,12 @@ import { AbsensiComponent } from './absensi/absensi.component';
 import { Authguard } from './prosesData/authguard';
 import { BonusComponent } from './bonus/bonus.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { BlockedComponent } from './blocked/blocked.component';
 
 export const navRoute:Routes = [
     {path: '', component:LoginComponent},
     {
-        path: 'dashboard', component:DashboardComponent, /*canActivate:[Authguard],*/
+        path: 'dashboard', component:DashboardComponent, canActivate:[Authguard],
         children: [
             {path: '', component:StationComponent},
             {path: 'score', component:ScoreComponent},
@@ -25,5 +26,6 @@ export const navRoute:Routes = [
             {path: 'Absensi', component:AbsensiComponent}
         ]
     },
-    {path: 'ranking', component:RankingComponent}
+    {path: 'ranking', component:RankingComponent},
+    {path: 'blocked', component:BlockedComponent}
 ]

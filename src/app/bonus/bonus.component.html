@@ -15,6 +15,17 @@
 
             <div class="panel panel-default">
               <div class="panel-body">
+                <h3>
+                  <small>Nama Kelompok</small> {{fireService.selectedKelompok.namaKel}}</h3>
+                <h3>
+                  <small>Nama Ketua</small> {{fireService.selectedKelompok.ketua}}</h3>
+                <h3>
+                  <small>Score</small> {{fireService.selectedKelompok.skor}}</h3>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-body">
                 <form action="" method="POST" role="form">
                   <legend>Special Senior
                     <small>Score</small>
@@ -22,10 +33,11 @@
 
                   <div class="form-group">
                     <label for="">Score</label>
+                    <p>Score akan tersimpan sebanyak 300 point</p>
                   </div>
 
                   <div class="form-group">
-                    <button type="button" class="btn btn-success form-control">Add</button>
+                    <button type="button" class="btn btn-success form-control" (click)="updateNewScore(fireService.selectedKelompok.$key , 300)">Add</button>
                   </div>
                 </form>
               </div>
@@ -37,9 +49,9 @@
 
             <div class="panel panel-default">
               <div class="panel-body">
-                <form action="" method="POST" role="form">
+                <form #kelForms="ngForm" (submit)="updateNewScore(fireService.selectedKelompok.$key , kelForms.value.skor)">
                   <legend>Bonus
-                    <small>Score</small>
+                    <small>Score (Game Bonus) </small>
                   </legend>
 
                   <div class="form-group">
@@ -47,9 +59,12 @@
                   </div>
 
                   <div class="form-group">
-                    <button type="button" class="btn btn-danger">Low</button>
-                    <button type="button" class="btn btn-warning">Medium</button>
-                    <button type="button" class="btn btn-success">High</button>
+                    <input type="number" class="form-control" placeholder="Input Score"
+                    name="skor" #skor="ngModel" [(ngModel)]="fireService.skorSee.skor">
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-success">Kirim Score</button>
                   </div>
                 </form>
               </div>

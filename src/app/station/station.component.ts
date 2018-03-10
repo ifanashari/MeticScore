@@ -34,6 +34,10 @@ export class StationComponent implements OnInit {
     this.routers.navigate(['/dashboard/score']);
     this.fireService.selectedKelompok = Object.assign({}, klmp);
   }
+  onEditBonus(klmp: KelompokMetic) {
+    this.routers.navigate(['/dashboard/bonus']);
+    this.fireService.selectedKelompok = Object.assign({}, klmp);
+  }
 
 
 

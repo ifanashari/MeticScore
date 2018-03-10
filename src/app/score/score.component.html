@@ -16,6 +16,9 @@
                   <h3><small>Score</small> {{fireService.selectedKelompok.skor}}</h3>
                 </div>
                 <hr>
+                <p>Easy = max 100 point</p>
+                <p>Medium = max 200 point</p>
+                <p>Hard = max 300 point</p>
                 <label for="">Status Pos (ex: Easy , Medium , Hard)</label>
                 <select name="postate" [(ngModel)]="statusPos" class="form-control">
                   <option [value]="1">Pos with Easy Quest</option>
@@ -25,21 +28,21 @@
                 <br>
 
                 <div class="form-group" *ngIf="(statusPos == 1)">
-                  <button class="btn btn-success" (click)="updateNewScore(fireService.selectedKelompok.$key , 15)">High Finished</button>
-                  <button class="btn btn-warning" (click)="updateNewScore(fireService.selectedKelompok.$key , 10)">Medium Finished</button>
-                  <button class="btn btn-danger" (click)="updateNewScore(fireService.selectedKelompok.$key , 5)">Low Finished</button>
+                  <button class="btn btn-success" (click)="updateNewScore(fireService.selectedKelompok.$key , 100)">High Finished</button>
+                  <button class="btn btn-warning" (click)="updateNewScore(fireService.selectedKelompok.$key , 65)">Medium Finished</button>
+                  <button class="btn btn-danger" (click)="updateNewScore(fireService.selectedKelompok.$key , 30)">Low Finished</button>
                 </div>
 
                 <div class="form-group" *ngIf="(statusPos == 2)">
-                  <button class="btn btn-success" (click)="updateNewScore(fireService.selectedKelompok.$key , 18)">High Finished</button>
-                  <button class="btn btn-warning" (click)="updateNewScore(fireService.selectedKelompok.$key , 12)">Medium Finished</button>
-                  <button class="btn btn-danger" (click)="updateNewScore(fireService.selectedKelompok.$key , 8)">Low Finished</button>
+                  <button class="btn btn-success" (click)="updateNewScore(fireService.selectedKelompok.$key , 200)">High Finished</button>
+                  <button class="btn btn-warning" (click)="updateNewScore(fireService.selectedKelompok.$key , 135)">Medium Finished</button>
+                  <button class="btn btn-danger" (click)="updateNewScore(fireService.selectedKelompok.$key , 60)">Low Finished</button>
                 </div>
 
                 <div class="form-group" *ngIf="(statusPos == 3)">
-                  <button class="btn btn-success" (click)="updateNewScore(fireService.selectedKelompok.$key , 20)">High Finished</button>
-                  <button class="btn btn-warning" (click)="updateNewScore(fireService.selectedKelompok.$key , 15)">Medium Finished</button>
-                  <button class="btn btn-danger" (click)="updateNewScore(fireService.selectedKelompok.$key , 10)">Low Finished</button>
+                  <button class="btn btn-success" (click)="updateNewScore(fireService.selectedKelompok.$key , 300)">High Finished</button>
+                  <button class="btn btn-warning" (click)="updateNewScore(fireService.selectedKelompok.$key , 205)">Medium Finished</button>
+                  <button class="btn btn-danger" (click)="updateNewScore(fireService.selectedKelompok.$key , 90)">Low Finished</button>
                 </div>
 
                 <button type="submit" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  class="btn btn-default">Kembali</button>

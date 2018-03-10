@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireDatabase , AngularFireList , AngularFireObject } from 'angularfire2/database';
-import { KelompokMetic, Peserta } from './data.model';
+import { KelompokMetic, Peserta, ScoreVal } from './data.model';
 
 @Injectable()
 export class DataService {
@@ -9,6 +9,7 @@ export class DataService {
   skoreList: AngularFireList<{}>;
   pesertaList: AngularFireList<any>;
   selectedKelompok: KelompokMetic = new KelompokMetic();
+  skorSee: ScoreVal = new ScoreVal();
   poshere = {};
   trynow:any;
   toJson:any;

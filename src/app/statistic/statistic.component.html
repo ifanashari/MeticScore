@@ -3,7 +3,13 @@
   <div class="page-wrapper">
     <div class="container-fluid">
       <div class="jarak" style="padding-bottom: 2%;">
-        <h3>Statistik</h3>
+        <h3>Statistik
+          <a [routerLink]="['/ranking']" routerLinkActive="router-link-active" >
+            <small style="color:cadetblue;"> Open in Full view
+              <i class="fa fa-external-link" aria-hidden="true"></i>
+            </small>
+          </a>
+        </h3>
         <hr style="border: 0.5px solid silver;">
         <p style="text-align:right;">Terakhir update 08:20:13 WIS</p>
       </div>

@@ -21,9 +21,8 @@
               <h3 id="team">
                 <small>Kelompok</small> {{kelompok.namaKel}} <small>Score: </small> {{kelompok.skor}}
               </h3>
-              
               <button (click)="onEdit(kelompok)" type="button" class="btn btn-success">Score</button>
-              <button [routerLink]="['/dashboard/bonus']" routerLinkActive="router-link-active" type="button" class="btn btn-info">Bonus</button>
+              <button (click)="onEditBonus(kelompok)" type="button" class="btn btn-info">Bonus</button>
               
             </div>
           </div>

@@ -88,7 +88,7 @@
         </a>
       </li>
       <li>
-        <a data-toggle="tab" [routerLink]="['/ranking']" routerLinkActive="router-link-active">
+        <a data-toggle="tab" [routerLink]="['/dashboard/statistic']" routerLinkActive="router-link-active">
           <i class="fa fa-line-chart"></i> Rangking
         </a>
       </li>
@@ -97,8 +97,8 @@
           <i class="fa fa-pencil-square-o"></i> Absensi</a>
       </li>
       <li>
-        <a data-toggle="tab" [routerLink]="['/dashboard/addKelompok']" routerLinkActive="router-link-active">
-          <i class="fa fa-plus"></i> Add new Kelompok</a>
+        <a data-toggle="tab" [routerLink]="['/dashboard/addKelompok']" routerLinkActive="router-link-active" *ngIf="(usersID == 'T5AixxsUf4fnJT7PYqOcpQm27K53')">
+          <i class="fa fa-plus"></i> Add new Kelompok <small style="color:red;"> High Admin </small></a>
       </li>
       <li>
         <a data-toggle="tab" (click)="logoutFormWebsite()">
@@ -113,7 +113,8 @@
           &copy; Metic -
           <a href="http://www.smktelkom-mlg.sch.id/" style="color:darkred;">Smk Telkom Malang</a> 2018
         </small>
-        <br> {{dateForToday | date:'fullDate'}}
+        <br> {{dateForToday | date:'fullDate'}} 
+        <br> <p style="color:rgb(196, 196, 196)"> Version 2.3.1 Beta </p>
       </h5>
     </div>
   </nav>

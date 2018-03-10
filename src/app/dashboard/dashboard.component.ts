@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   usersEmail: string;
   usersID:string;
   dateForToday:any;
-  constructor(private routers: Router , private fireAuthNew: AngularFireAuth) {
+  constructor(private routers: Router , private fireAuthNew: AngularFireAuth , private route:Router) {
     this.dateForToday = Date.now();
   }
 
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
         this.usersEmail = res.email; 
         this.usersID = res.uid;
       } else {
-        this.usersEmail = "Anonimus";
+        this.route.navigate(['/blocked']);
       }
     })
   }

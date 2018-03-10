@@ -27,6 +27,7 @@ import { DataService } from './prosesData/data.service';
 import { AbsensiComponent } from './absensi/absensi.component';
 import { BonusComponent } from './bonus/bonus.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { BlockedComponent } from './blocked/blocked.component';
 
 let firebaseConfigHere = {
   apiKey: "AIzaSyABaNXO2lyzikOP6PCgpoaWrVKk_C8T7BM",
@@ -49,7 +50,8 @@ let firebaseConfigHere = {
     ListKelompokComponent,
     AbsensiComponent,
     BonusComponent,
-    RankingComponent
+    RankingComponent,
+    BlockedComponent
   ],
   imports: [
     BrowserModule,OrderModule,

@@ -4,11 +4,11 @@
     <h1>Team
       <small>Rankings</small>
     </h1>
-    
+
     <button type="button" class="btn btn-info" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
-        <i class="fa fa-home"></i> Back
+      <i class="fa fa-home"></i> Back
     </button>
-    
+
   </div>
 
 
@@ -16,16 +16,23 @@
     <thead>
       <tr>
         <th>Kelompok</th>
+        <th class="text-right">Score</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td colspan="2">
+          <div class="text-center" *ngIf="(kelompokList == null)" style="margin-top:10vh">
+            <img src="../../assets/img/Rolling-1s-108px.gif" alt="">
+          </div>
+        </td>
+      </tr>
+      <tr *ngFor="let kelompok of kelompokList | orderBy: key : reverse ; let i = index">
         <td>
-          <h3>
-            Alpha
-            <small>Score</small>
-            1000
-          </h3>
+          <h3>{{i + 1}} . {{kelompok.namaKel}}</h3>
+        </td>
+        <td>
+          <h1 class="text-right">{{kelompok.skor}}</h1>
         </td>
       </tr>
     </tbody>

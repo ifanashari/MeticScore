@@ -41,17 +41,20 @@ export class ScoreComponent implements OnInit {
     return hasil;
   }
 
-  inputGuards(){
-    
-  }
-
   updateNewScore(key , score){
-    let newScore = parseInt(score);
-    let hasil = this.fireService.selectedKelompok.skor += newScore;
-    this.fireService.updatedScoreTeam1(key , hasil);
-    this.resetForm();
-    this.toast.success('Updated Data Great' , 'Done');
-    this.routers.navigate(['/dashboard']);
+    let confirm = window.confirm('Anda yakin ini benar?');
+
+    if (confirm == true) {
+     
+      let newScore = parseInt(score);
+      let hasil = this.fireService.selectedKelompok.skor += newScore;
+      this.fireService.updatedScoreTeam1(key , hasil);
+      this.resetForm();
+      this.toast.success('Updated Data Great' , 'Done');
+      this.routers.navigate(['/dashboard']); 
+    
+    }
+    
   }
 
   onEdit(klmp: KelompokMetic) {
